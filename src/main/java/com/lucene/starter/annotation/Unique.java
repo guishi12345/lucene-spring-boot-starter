@@ -3,10 +3,10 @@ package com.lucene.starter.annotation;
 import java.lang.annotation.*;
 
 /**
- * lucene分词标记
+ * 标识字段的值唯一
  */
 @Target(ElementType.FIELD)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Analysis {
+public @interface Unique {
 }

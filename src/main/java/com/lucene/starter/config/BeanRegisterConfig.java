@@ -24,7 +24,6 @@ public class BeanRegisterConfig {
     public LuceneService luceneService() throws Exception {
         LuceneService luceneService = new LuceneService();
         luceneService.setIndexPath(luceneProperties.getIndexPath());
-        luceneService.initDirectory();
         return luceneService;
     }
 
