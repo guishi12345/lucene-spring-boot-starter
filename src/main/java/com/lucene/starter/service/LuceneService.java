@@ -16,6 +16,7 @@ import org.apache.lucene.index.*;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.store.NativeFSLockFactory;
 import org.springframework.util.StringUtils;
 
 import java.io.File;
@@ -180,7 +181,7 @@ public class LuceneService {
             String path = indexPath + "/" + directoryName;
             File file = new File(path);
             if (!file.exists()) {
-                file.createNewFile();
+                file.mkdirs();
             }
             directory = FSDirectory.open(Paths.get(path));
             //在索引库没有建立并且没有索引文件的时候首先要commit一下让他建立一个索引库的版本信息
